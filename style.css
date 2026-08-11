@@ -1,3 +1,46 @@
 body{
-    background-color: black;
+    background-color: rgb(228, 212, 212);
+}
+.skill-item {
+  border-bottom: 1px solid #191616;
+  padding: 15px ;
+  font-family: Arial, sans-serif;
+}
+
+/* Clickable Header */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skill-header:hover {
+  color: #df0d0d;
+}
+
+/* Arrow Rotation */
+.skill-header .arrow {
+  transition: transform 0.3s ease;
+}
+.skill-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Hidden Details with Smooth Transition */
+.skill-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, margin-top 0.3s ease;
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Revealed Details */
+.skill-item.active .skill-details {
+  max-height: 100px; /* Adjust based on your content length */
+  margin-top: 10px;
 }
